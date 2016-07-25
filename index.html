@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>Narrow Jumbotron Template for Bootstrap</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="jumbotron-narrow.css" rel="stylesheet">
+	 <!-- CSS for iCheck -->
+	<link href="skins/square/blue.css" rel="stylesheet">
+
+
+  </head>
+
+  <body>
+
+    <div class="container">
+      <div class="header clearfix">
+        <nav>
+          <ul class="nav nav-pills pull-right">
+            <li role="presentation" class="active"><a href="#">Home</a></li>
+            <li role="presentation"><a href="#">About</a></li>
+            <li role="presentation"><a href="#">Contact</a></li>
+          </ul>
+        </nav>
+        <h3 class="text-muted">Project name</h3>
+      </div>
+    
+    <div class="main_content">	
+       <div class="main_pic center-block">
+           <img src="img/1.jpg" alt="" class="oneimg" width="400" height="300" id="main_image">
+	   </div>
+
+	    <form class ="choice_question_anwser">
+	        <div class="main_radio text-center">		   
+		      <input type="radio" name="iCheck" value="pic1_1" id="pic1_1"/> <label for="pic1_1">pic1_1</label>
+			  <input type="radio" name="iCheck" value="pic1_2" id="pic1_2"/> <label for="pic1_2">pic1_2</label>
+			  <input type="radio" name="iCheck" value="pic1_3" id="pic1_3"/> <label for="pic1_3">pic1_3</label>
+			  <input type="radio" name="iCheck" value="pic1_4" id="pic1_4"/> <label for="pic1_4">pic1_4</label>
+ 	        </div> 
+			<p class="text-center answer" >答案<label style="color:red">正确</label></p>
+		</form>		   
+
+       <button type="button" class="btn btn-lg btn-success center-block" id="next_button">Next</button>		 
+    </div>  
+
+      <footer class="footer">
+        <p>&copy; Company 2016</p>
+      </footer>
+
+    </div> <!-- /container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+	<script src="js/icheck.min.js"></script>
+	
+    <script>
+       $(document).ready(function(){
+	      var i=1;
+		  
+	      $('button').click(function(){
+		     i=i+1;
+			 if(i>3)
+			 {
+			    i=1;
+			 }
+			 var img_src = "img/"+i+".jpg";		  
+//           slide mode
+			 $("#main_image").animate({"left":-410},"slow",function(){
+			   $("#main_image").attr("src",img_src);
+			   $("#main_image").css({"left":410}); 
+               $("#main_image").animate({"left":0},"slow");			   
+			});
+		  
+//           fade mode
+//		     $("#main_image").fadeOut("5000",function(){
+//			    $("#main_image").attr("src",img_src);
+//				setTimeout('$("#main_image").fadeIn("5000")',1000);
+//			 });
+		  }); 
+	   //document.getElementById("main_image").src="2.jpg";
+	   });
+	   
+	   $('input').iCheck({
+            checkboxClass: 'icheckbox_square-blue',
+            radioClass: 'iradio_square-blue',
+            increaseArea: '20%' // optional
+        });
+    </script>
+   
+  </body>
+</html>
