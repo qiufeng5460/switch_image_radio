@@ -7,7 +7,6 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="../../favicon.ico">
 
     <title>Narrow Jumbotron Template for Bootstrap</title>
 
@@ -43,15 +42,15 @@
 
 	    <form class ="choice_question_anwser">
 	        <div class="main_radio text-center">		   
-		      <input type="radio" name="iCheck" value="pic1_1" id="pic1_1"/> <label for="pic1_1">pic1_1</label>
-			  <input type="radio" name="iCheck" value="pic1_2" id="pic1_2"/> <label for="pic1_2">pic1_2</label>
-			  <input type="radio" name="iCheck" value="pic1_3" id="pic1_3"/> <label for="pic1_3">pic1_3</label>
-			  <input type="radio" name="iCheck" value="pic1_4" id="pic1_4"/> <label for="pic1_4">pic1_4</label>
+		      <input type="radio" name="iRadio" value="pic1_1" id="pic1_1"/> <label for="pic1_1">pic1_1</label>
+			  <input type="radio" name="iRadio" value="pic1_2" id="pic1_2"/> <label for="pic1_2">pic1_2</label>
+			  <input type="radio" name="iRadio" value="pic1_3" id="pic1_3"/> <label for="pic1_3">pic1_3</label>
+			  <input type="radio" name="iRadio" value="pic1_4" id="pic1_4"/> <label for="pic1_4">pic1_4</label>
  	        </div> 
-			<p class="text-center answer" >答案<label style="color:red">正确</label></p>
+			<p class="text-center" id="answer" style="visibility:hidden">答案<label style="color:red" id="right_wrong">正确</label></p>
 		</form>		   
 
-       <button type="button" class="btn btn-lg btn-success center-block" id="next_button">Next</button>		 
+       <button type="button" disabled="disabled" class="btn btn-lg btn-success center-block" id="next_button">Next</button>		 
     </div>  
 
       <footer class="footer">
@@ -85,21 +84,47 @@
 			   $("#main_image").css({"left":410}); 
                $("#main_image").animate({"left":0},"slow");			   
 			});
+			//set radio&p&button 
+			$('input').iCheck('uncheck');
+			$('input').iCheck('enable');
+			$('p#answer').css("visibility","hidden");
+			$('#next_button').attr("disabled","disabled");
 		  
-//           fade mode
-//		     $("#main_image").fadeOut("5000",function(){
-//			    $("#main_image").attr("src",img_src);
-//				setTimeout('$("#main_image").fadeIn("5000")',1000);
-//			 });
+/*          fade mode
+		     $("#main_image").fadeOut("5000",function(){
+			    $("#main_image").attr("src",img_src);
+				setTimeout('$("#main_image").fadeIn("5000")',1000);
+			 });
 		  }); 
-	   //document.getElementById("main_image").src="2.jpg";
-	   });
+*/
 	   
-	   $('input').iCheck({
-            checkboxClass: 'icheckbox_square-blue',
-            radioClass: 'iradio_square-blue',
-            increaseArea: '20%' // optional
-        });
+	   
+	   });
+	   	 //for iCheck style
+	      $('input').iCheck({
+             //checkboxClass: 'icheckbox_square-blue',
+             radioClass: 'iradio_square-blue',
+             increaseArea: '20%' // optional
+          });
+          //for ifCheck control
+          $('input').on('ifChecked',function(event){
+		     //set radio&button
+			 $('#next_button').attr("disabled",false);
+			 $('input').iCheck('disable');
+			 
+			 //set p
+			 if ("pic1_1" == $("input[type='radio']:checked").val())
+			 {
+			    $('#right_wrong').text("正确");
+			 }
+			 else
+			 {
+			    $('#right_wrong').text("错误");
+			 }
+			 $('p#answer').css("visibility","visible");
+		  });  
+	   });
+
     </script>
    
   </body>
