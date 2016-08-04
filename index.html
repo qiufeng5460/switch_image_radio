@@ -66,9 +66,13 @@
     <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
 	<script src="js/icheck.min.js"></script>
+	<script src="js/local.js" charset="UTF-8"></script>
 	
     <script>
-       $(document).ready(function(){
+       
+	   
+	   
+	   $(document).ready(function(){
 	      var i=1;
 		  
 	      $('button').click(function(){
@@ -77,51 +81,25 @@
 			 {
 			    i=1;
 			 }
-			 var img_src = "img/"+i+".jpg";		  
-//           slide mode
-			 $("#main_image").animate({"left":-410},"slow",function(){
-			   $("#main_image").attr("src",img_src);
-			   $("#main_image").css({"left":410}); 
-               $("#main_image").animate({"left":0},"slow");			   
-			});
-			//set radio&p&button 
-			$('input').iCheck('uncheck');
-			$('input').iCheck('enable');
-			$('p#answer').css("visibility","hidden");
-			$('#next_button').attr("disabled","disabled");
-		  
-/*          fade mode
-		     $("#main_image").fadeOut("5000",function(){
-			    $("#main_image").attr("src",img_src);
-				setTimeout('$("#main_image").fadeIn("5000")',1000);
-			 });
-		  }); 
-*/
-	   
+
+	      button_click(i);
 	   
 	   });
+	   
 	   	 //for iCheck style
 	      $('input').iCheck({
              //checkboxClass: 'icheckbox_square-blue',
              radioClass: 'iradio_square-blue',
              increaseArea: '20%' // optional
           });
+		  
           //for ifCheck control
           $('input').on('ifChecked',function(event){
 		     //set radio&button
 			 $('#next_button').attr("disabled",false);
 			 $('input').iCheck('disable');
 			 
-			 //set p
-			 if ("pic1_1" == $("input[type='radio']:checked").val())
-			 {
-			    $('#right_wrong').text("正确");
-			 }
-			 else
-			 {
-			    $('#right_wrong').text("错误");
-			 }
-			 $('p#answer').css("visibility","visible");
+             set_anwser();
 		  });  
 	   });
 
