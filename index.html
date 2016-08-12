@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -42,10 +42,10 @@
 
 	    <form class ="choice_question_anwser">
 	        <div class="main_radio text-center">		   
-		      <input type="radio" name="iRadio" value="pic1_1" id="pic1_1"/> <label for="pic1_1"><label id="option_1">pic1_1</label></label>
-			  <input type="radio" name="iRadio" value="pic1_2" id="pic1_2"/> <label for="pic1_2"><label id="option_2">pic1_2</label></label>
-			  <input type="radio" name="iRadio" value="pic1_3" id="pic1_3"/> <label for="pic1_3"><label id="option_3">pic1_3</label></label>
-			  <input type="radio" name="iRadio" value="pic1_4" id="pic1_4"/> <label for="pic1_4"><label id="option_4">pic1_4</label></label>
+		      <input type="radio" name="iRadio" value="pic1_1" id="pic1_1"/> <label for="pic1_1"><label id="option_1">图1选项A</label></label>
+			  <input type="radio" name="iRadio" value="pic1_2" id="pic1_2"/> <label for="pic1_2"><label id="option_2">图1选项B</label></label>
+			  <input type="radio" name="iRadio" value="pic1_3" id="pic1_3"/> <label for="pic1_3"><label id="option_3">图1选项C</label></label>
+			  <input type="radio" name="iRadio" value="pic1_4" id="pic1_4"/> <label for="pic1_4"><label id="option_4">图1选项D</label></label>
  	        </div> 
 			<p class="text-center" id="answer" style="visibility:hidden">答案<label style="color:red" id="right_wrong">正确</label></p>
 		</form>		   
@@ -77,7 +77,7 @@
 		  
 	      $('button').click(function(){
 		     i=i+1;
-			 if(i>2)
+			 if(i>(m_page-1))
 			 {
 			    i=0;
 			 }
