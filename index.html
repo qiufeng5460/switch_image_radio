@@ -23,18 +23,31 @@
 
   <body>
 
-    <div class="container">
-      <div class="header clearfix">
-        <nav>
-          <ul class="nav nav-pills pull-right">
-            <li role="presentation" class="active"><a href="#">Home</a></li>
-            <li role="presentation"><a href="#">About</a></li>
-            <li role="presentation"><a href="#">Contact</a></li>
+    <nav class="navbar navbar-default">
+	  <div class="container">
+	  
+	    <div class="navbar-header">
+		  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" >
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+		  <a class="navbar-brand" href="#">Project name</a>
+		  </div> 
+          
+		  <div id="navbar" class="navbar-collapse collapse">		 
+          <ul class="nav navbar-nav navbar-right">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
           </ul>
-        </nav>
-        <h3 class="text-muted">Project name</h3>
+          </div>
+		
       </div>
-    
+    </nav>
+	
+	<div class="container">
     <div class="main_content">	
        <div class="main_pic center-block">
            <img src="img/0.jpg" alt="" class="oneimg" width="400" height="300" id="main_image">
@@ -52,7 +65,9 @@
 
        <button type="button" disabled="disabled" class="btn btn-lg btn-success center-block" id="next_button">Next</button>		 
     </div>  
-
+    </div>
+	
+	<div class="container">
       <footer class="footer">
         <p>&copy; Company 2016</p>
       </footer>
@@ -75,7 +90,7 @@
 	   $(document).ready(function(){
 	      var i=0;
 		  
-	      $('button').click(function(){
+	      $('#next_button').click(function(){
 		     i=i+1;
 			 if(i>(m_page-1))
 			 {
