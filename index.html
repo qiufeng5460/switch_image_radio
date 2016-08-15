@@ -54,12 +54,24 @@
 	   </div>
 
 	    <form class ="choice_question_anwser">
-	        <div class="main_radio text-center">		   
+	        <div class="main_radio text-center">	
+              <div class="row">
+              <div class="col-sm-3 col-sm-push-2">	  
 		      <input type="radio" name="iRadio" value="pic1_1" id="pic1_1"/> <label for="pic1_1"><label id="option_1">图1选项A</label></label>
+			  </div>
+			  <div class="col-sm-3 col-sm-push-1">
 			  <input type="radio" name="iRadio" value="pic1_2" id="pic1_2"/> <label for="pic1_2"><label id="option_2">图1选项B</label></label>
+              </div>
+	
+			  <div class="col-sm-3 col-sm-pull-0">
 			  <input type="radio" name="iRadio" value="pic1_3" id="pic1_3"/> <label for="pic1_3"><label id="option_3">图1选项C</label></label>
+	          </div>
+			  <div class="col-sm-3 col-sm-pull-1">
 			  <input type="radio" name="iRadio" value="pic1_4" id="pic1_4"/> <label for="pic1_4"><label id="option_4">图1选项D</label></label>
- 	        </div> 
+ 	          </div>
+			  </div>
+
+			</div> 
 			<p class="text-center" id="answer" style="visibility:hidden">答案<label style="color:red" id="right_wrong">正确</label></p>
 		</form>		   
 
