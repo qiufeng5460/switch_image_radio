@@ -49,24 +49,24 @@
 	
 	<div class="container">
     <div class="main_content">	
-       <div class="main_pic center-block">
-           <img src="img/0.jpg" alt="" class="oneimg" width="400" height="300" id="main_image">
+       <div class="main_pic" >
+         <img src="img/0.jpg" alt="" id="main_image">
 	   </div>
 
 	    <form class ="choice_question_anwser">
 	        <div class="main_radio text-center">	
               <div class="row">
-              <div class="col-sm-3 col-sm-push-2">	  
+              <div class="col-sm-3 col-xs-6">	  
 		      <input type="radio" name="iRadio" value="pic1_1" id="pic1_1"/> <label for="pic1_1"><label id="option_1">图1选项A</label></label>
 			  </div>
-			  <div class="col-sm-3 col-sm-push-1">
+			  <div class="col-sm-3 col-xs-6">
 			  <input type="radio" name="iRadio" value="pic1_2" id="pic1_2"/> <label for="pic1_2"><label id="option_2">图1选项B</label></label>
               </div>
 	
-			  <div class="col-sm-3 col-sm-pull-0">
+			  <div class="col-sm-3 col-xs-6">
 			  <input type="radio" name="iRadio" value="pic1_3" id="pic1_3"/> <label for="pic1_3"><label id="option_3">图1选项C</label></label>
 	          </div>
-			  <div class="col-sm-3 col-sm-pull-1">
+			  <div class="col-sm-3 col-xs-6">
 			  <input type="radio" name="iRadio" value="pic1_4" id="pic1_4"/> <label for="pic1_4"><label id="option_4">图1选项D</label></label>
  	          </div>
 			  </div>
@@ -102,6 +102,9 @@
 	   $(document).ready(function(){
 	      var i=0;
 		  
+	//	  	$("#main_image").css("width",$(window).width()*4/9);
+	//		$("#main_image").css("height",$(window).width()/3);
+		  
 	      $('#next_button').click(function(){
 		     i=i+1;
 			 if(i>(m_page-1))
@@ -128,6 +131,22 @@
 			 
              set_anwser(i);
 		  });  
+	   /*
+	    $(window).resize(function(){
+		    //alert($(window).width());
+			var view_width = $(window).width();
+			var view_height = $(window).height();
+			var view_center = view_width/2;
+			var img_width = view_width*4/9;
+			var img_height = view_width/3;
+			var img_left = view_center - img_width/2;
+			
+			$(".main_pic").css("left",img_left);
+			$("#main_image").css("width",img_width);
+			$("#main_image").css("height",img_height);
+
+		});
+	   */
 	   });
 
     </script>
