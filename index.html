@@ -49,7 +49,7 @@
 	
 	<div class="container">
     <div class="main_content">	
-       <div class="main_pic" >
+       <div class="main_pic center-block" >
          <img src="img/0.jpg" alt="" id="main_image">
 	   </div>
 
@@ -101,10 +101,7 @@
 	   
 	   $(document).ready(function(){
 	      var i=0;
-		  
-	//	  	$("#main_image").css("width",$(window).width()*4/9);
-	//		$("#main_image").css("height",$(window).width()/3);
-		  
+
 	      $('#next_button').click(function(){
 		     i=i+1;
 			 if(i>(m_page-1))
@@ -133,14 +130,9 @@
 		  });  
 	   /*
 	    $(window).resize(function(){
-		    //alert($(window).width());
 			var view_width = $(window).width();
 			var view_height = $(window).height();
-			var view_center = view_width/2;
-			var img_width = view_width*4/9;
-			var img_height = view_width/3;
-			var img_left = view_center - img_width/2;
-			
+	
 			$(".main_pic").css("left",img_left);
 			$("#main_image").css("width",img_width);
 			$("#main_image").css("height",img_height);

@@ -24,28 +24,26 @@ body {
 	
   width:400px;
   height:300px;
+  margin-bottom: 30px;
+  
+  border:2px solid #dcdcdc;  
+  padding:5px;
+  background:#fff;
+  overflow:hidden;
+  
 /*
   background-image:url(img/0.jpg); 
   background-size:100%;
   
-  margin-bottom: 30px;
-  
-  
-
   padding-top:3px;
   padding-left:3px;
   */
- /* border:2px solid #dcdcdc;  */
+
 /* 
- overflow:hidden;
-  
   position:relative;
-  
   display:block;
 */
-  /*  margin-left:auto;
-  margin-right:auto;
-*/
+
 }
 
 .main_pic img{
